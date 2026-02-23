@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Flashcards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="navbar">
+    <h1>AI Flashcards</h1>
+    <button onclick="toggleDarkMode()">🌙</button>
+  </div>
+
+  <div class="container">
+    <div class="menu">
+      <label for="category-filter">Choose Category:</label>
+      <select id="category-filter">
+        <option value="All">All Categories</option>
+      </select>
+    </div>
+
+    <div class="flashcard-container">
+      <div class="flashcard" id="flashcard">
+        <p id="flashcard-text">Loading...</p>
+      </div>
+
+      <div class="category-display" id="category"></div>
+
+      <button class="flip-btn" onclick="flipCard()">Flip</button>
+
+      <div class="controls">
+        <button onclick="markCorrect()">✅ Correct</button>
+        <button onclick="markWrong()">❌ Wrong</button>
+      </div>
+
+      <div id="score">Score: 0/0</div>
+    </div>
+
+    <div class="user-actions">
+      <button onclick="nextFlashcard()">Next Card ➡️</button>
+      <button onclick="resetScore()">🔄 Reset Score</button>
+      <button onclick="downloadFlashcards()">⬇️ Export</button>
+      <input type="file" id="importFile" onchange="importFlashcards(event)" />
+    </div>
+
+    <div class="add-question">
+      <h2>Add Your Own Question</h2>
+      <input type="text" id="new-question" placeholder="Enter question" />
+      <input type="text" id="new-answer" placeholder="Enter answer" />
+      <input type="text" id="new-category" placeholder="Enter category" />
+      <button onclick="addCustomFlashcard()">➕ Add</button>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
